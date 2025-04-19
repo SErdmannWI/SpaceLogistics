@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://dilsp6suyvfxj"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_a53e7"]
+[ext_resource type="Script" path="res://quit_program_window.gd" id="2_0wfao"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_a53e7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeaderMargin" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="HeaderVBox" type="VBoxContainer" parent="CanvasLayer/HeaderMargin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HeaderMargin/HeaderVBox"]
+layout_mode = 2
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HeaderMargin/HeaderVBox"]
+layout_mode = 2
+text = "Select an Option Below
+"
+
+[node name="MainButtonVBox" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewSessionButton" type="Button" parent="CanvasLayer/MainButtonVBox"]
+layout_mode = 2
+text = "New Session"
+
+[node name="LoadSessionButton" type="Button" parent="CanvasLayer/MainButtonVBox"]
+layout_mode = 2
+text = "Load Sesion"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/MainButtonVBox"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MainButtonVBox"]
+layout_mode = 2
+text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="QuitProgramWindow" type="Window" parent="CanvasLayer/MarginContainer"]
+title = "Quit Program?"
+initial_position = 1
+size = Vector2i(480, 120)
+script = ExtResource("2_0wfao")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/QuitProgramWindow"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.0
+offset_right = 118.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/QuitProgramWindow/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="WindowPromptLabel" type="Label" parent="CanvasLayer/MarginContainer/QuitProgramWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Are you sure you want to quit?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/QuitProgramWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="QuitProgramButton" type="Button" parent="CanvasLayer/MarginContainer/QuitProgramWindow/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Quit Program"
+
+[node name="CancelQuitButton" type="Button" parent="CanvasLayer/MarginContainer/QuitProgramWindow/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"

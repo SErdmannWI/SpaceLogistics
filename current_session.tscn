@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b26ivlvr37r7t"]
+
+[ext_resource type="Script" path="res://current_session.gd" id="1_pal1n"]
+[ext_resource type="Texture2D" uid="uid://w0ogjqsg3mxk" path="res://icon.svg" id="2_hffa6"]
+[ext_resource type="PackedScene" uid="uid://lqfqpit6bkpc" path="res://new_order_menu.tscn" id="3_m55uj"]
+
+[node name="CurrentSession" type="Node2D"]
+script = ExtResource("1_pal1n")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeaderMarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HeaderMarginContainer"]
+layout_mode = 2
+text = "<Session Name>"
+
+[node name="ActionBarMarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ActionBarMarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ActionBarMarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Actions"
+
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/ActionBarMarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select an Option
+"
+icon = ExtResource("2_hffa6")
+item_count = 5
+popup/item_0/text = "New Order"
+popup/item_1/text = "View Dashboard"
+popup/item_1/id = 4
+popup/item_2/text = "View Order"
+popup/item_2/id = 1
+popup/item_3/text = "Edit Order"
+popup/item_3/id = 2
+popup/item_4/text = "Quit"
+popup/item_4/id = 3
+
+[node name="ConsoleMarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -20.0
+offset_right = 247.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ConsoleMarginContainer"]
+layout_mode = 2
+
+[node name="NewOrderMenu" parent="CanvasLayer/ConsoleMarginContainer/VBoxContainer" instance=ExtResource("3_m55uj")]

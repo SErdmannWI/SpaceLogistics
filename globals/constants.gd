@@ -59,14 +59,14 @@ const SATURN_NAME: String = "Saturn"
 const URANUS_NAME: String = "Uranus"
 const NEPTUNE_NAME: String = "Neptune0"
 
-const MERCURY_COORDS: Vector2 = Vector2.ZERO
-const VENUS_COORDS: Vector2 = Vector2.ZERO
+const MERCURY_COORDS: Vector2 = Vector2(10, 5)
+const VENUS_COORDS: Vector2 = Vector2(18, 7)
 const EARTH_COORDS: Vector2 = Vector2.ZERO
-const MARS_COORDS: Vector2 = Vector2.ZERO
-const JUPITER_COORDS: Vector2 = Vector2.ZERO
-const SATURN_COORDS: Vector2 = Vector2.ZERO
-const URANUS_COORDS: Vector2 = Vector2.ZERO
-const NEPTUNE_COORDS: Vector2 = Vector2.ZERO
+const MARS_COORDS: Vector2 = Vector2(30, 12)
+const JUPITER_COORDS: Vector2 = Vector2(100, 40)
+const SATURN_COORDS: Vector2 = Vector2(180, 70)
+const URANUS_COORDS: Vector2 = Vector2(360, 110)
+const NEPTUNE_COORDS: Vector2 = Vector2(450, 150)
 
 const MERCURY_UNLOAD_TIME: int = 100
 const VENUS_UNLOAD_TIME: int = 25

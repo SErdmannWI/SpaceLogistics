@@ -1,87 +1,136 @@
 [gd_scene load_steps=2 format=3 uid="uid://lqfqpit6bkpc"]
 
-[ext_resource type="Script" path="res://new_order_menu.gd" id="1_fudmb"]
+[ext_resource type="Script" uid="uid://ylhsv135igal" path="res://new_order_menu.gd" id="1_fudmb"]
 
 [node name="NewOrderMenu" type="Node2D"]
 script = ExtResource("1_fudmb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 322.0
-offset_bottom = 104.0
+offset_right = 431.0
+offset_bottom = 267.0
+theme_override_constants/separation = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="OriginHBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
 
-[node name="OriginLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="OriginLabel" type="Label" parent="VBoxContainer/OriginHBoxContainer"]
 layout_mode = 2
 text = "Choose Origin
 "
 
-[node name="OriginOptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+[node name="OriginOptionButton" type="OptionButton" parent="VBoxContainer/OriginHBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="OriginErrorLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "Origin and Destination cannot be the same!"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Spacer" type="Control" parent="VBoxContainer/OriginHBoxContainer"]
 layout_mode = 2
 
-[node name="DestinationLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="DestinationLabel" type="Label" parent="VBoxContainer/OriginHBoxContainer"]
 layout_mode = 2
 text = "Choose Destination
 "
 
-[node name="DestinationOptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+[node name="DestinationOptionButton" type="OptionButton" parent="VBoxContainer/OriginHBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="DestinationErrorLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="DestinationErrorLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Origin and Destination cannot be the same!"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TripInfoHBox" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="CargoChoiceLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer/TripInfoHBox"]
+layout_mode = 2
+text = "Total Distance: "
+
+[node name="Label3" type="Label" parent="VBoxContainer/TripInfoHBox"]
+layout_mode = 2
+text = "1.6 AU"
+
+[node name="Label2" type="Label" parent="VBoxContainer/TripInfoHBox"]
+layout_mode = 2
+text = "Est. Time Taken: "
+
+[node name="Label4" type="Label" parent="VBoxContainer/TripInfoHBox"]
+layout_mode = 2
+text = "2m 30d 2h 21m"
+
+[node name="CargoChoiceHBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CargoChoiceLabel" type="Label" parent="VBoxContainer/CargoChoiceHBox"]
 layout_mode = 2
 text = "Choose Cargo
 "
 
-[node name="CargoChoiceOptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer3"]
+[node name="CargoChoiceOptionButton" type="OptionButton" parent="VBoxContainer/CargoChoiceHBox"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CargoVolumeHBox" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="CargoVolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer4"]
+[node name="CargoVolumeLabel" type="Label" parent="VBoxContainer/CargoVolumeHBox"]
 layout_mode = 2
 text = "Enter Cargo Total Volume:"
 
-[node name="CargoVolumeTextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer4"]
+[node name="CargoVolumeTextEdit" type="TextEdit" parent="VBoxContainer/CargoVolumeHBox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 13
 placeholder_text = "Enter Quantity"
+scroll_fit_content_height = true
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+[node name="CargoDensityLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "Cargo Density: "
+horizontal_alignment = 1
 
-[node name="CargoMassLabel" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="CargoTotalMassHBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CargoMassLabel" type="Label" parent="VBoxContainer/CargoTotalMassHBox"]
 layout_mode = 2
 text = "Cargo Total Mass:"
 
-[node name="CargoMass" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="CargoMass" type="Label" parent="VBoxContainer/CargoTotalMassHBox"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "9999 kg"
+text = "0 kg"
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+[node name="AvailableShipsHBox" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="AvailableShipsLabel" type="Label" parent="VBoxContainer/HBoxContainer6"]
+[node name="AvailableShipsLabel" type="Label" parent="VBoxContainer/AvailableShipsHBox"]
 layout_mode = 2
 text = "Available Ships:"
 
-[node name="AvailableShipsOptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer6"]
+[node name="AvailableShipsOptionButton" type="OptionButton" parent="VBoxContainer/AvailableShipsHBox"]
+unique_name_in_owner = true
 layout_mode = 2
+
+[node name="SubmitResetHBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="VBoxContainer/SubmitResetHBox"]
+layout_mode = 2
+text = "Submit"
+
+[node name="ResetButton" type="Button" parent="VBoxContainer/SubmitResetHBox"]
+layout_mode = 2
+text = "Reset"
